@@ -1,23 +1,29 @@
 h1 {
   text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  color: #333;
 }
 
 body {
-  background: grey;
+  background: #f0f0f0;
 }
 
 #todo-list {
-  width: 500px;
-  margin: 60px auto;
+  width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 form,
 .todo {
-  border: 1px solid rgb(15, 26, 61);
-  padding: 10px 20px;
-  margin-bottom: 10px;
+  border: 1px solid #999;
+  padding: 12px 24px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
 }
 
 form {
@@ -27,9 +33,11 @@ form {
 }
 
 form input {
-  padding: 4px 8px;
+  padding: 8px 12px;
   flex-grow: 1;
   margin-right: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .todo {
@@ -39,47 +47,52 @@ form input {
 
 button {
   font-size: 16px;
-  background-color: rgb(62, 138, 151);
+  background-color: #4caf50;
   color: #fff;
   border-radius: 8px;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: rgb(173, 47, 28);
+  background-color: #45a049;
 }
 
 button:active {
-  background-color: rgb(130, 35, 21);
+  background-color: #3e8e41;
 }
 
 button:focus {
-  outline: 0;
+  outline: none;
 }
 
 input[type='text'] {
-  font-size: 20px;
-  font-family: monospace;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .todo input[type="checkbox"] {
-  transform: scale(1.8) translateY(1px);
+  transform: scale(1.5) translateY(1px);
   margin: 0 16px 0 0;
   cursor: pointer;
 }
 
 .todo-text input {
-  padding: 4px;
+  padding: 6px 10px;
 }
 
 .todo-text {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 24px;
-  margin-bottom: 1cm;
+  margin-bottom: 10px;
   display: flex;
   align-self: center;
+  color: #333;
 }
 
 .todo-completed {
@@ -93,5 +106,5 @@ input[type='text'] {
 }
 
 #completed {
-  margin-left: 15px;
+  margin-left: 20px;
 }
