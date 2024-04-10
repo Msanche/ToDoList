@@ -5,7 +5,7 @@ h1 {
 }
 
 body {
-  background: grey;
+  background: rgb(229, 229, 229);
 }
 
 #todo-list {
@@ -94,4 +94,29 @@ input[type='text'] {
 
 #completed {
   margin-left: 15px;
+}
+
+/* Estilos para el tema oscuro */
+.dark-theme {
+  background-color: #333; /* Color de fondo oscuro */
+  color: #fff; /* Color de texto claro */
+}
+
+.dark-theme .todo {
+  background-color: #555; /* Color de fondo de cada tarea */
+}
+
+.dark-theme .todo-actions button {
+  background-color: #777; /* Color de fondo de los botones de acciones */
+  color: #fff; /* Color de texto claro para los botones */
+}
+
+.dark-theme #add-button {
+  background-color: #777; /* Color de fondo del botón Agregar Tarea en tema oscuro */
+  color: #fff; /* Color de texto del botón Agregar Tarea en tema oscuro */
+}
+
+.dark-theme #theme-button {
+  background-color: #777; /* Color de fondo del botón Cambiar Tema en tema oscuro */
+  color: #fff; /* Color de texto del botón Cambiar Tema en tema oscuro */
 }

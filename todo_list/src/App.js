@@ -6,7 +6,7 @@ const App = () => { // Define un componente funcional llamado App.
   // Estado para mantener la lista de tareas (todos) y la tarea actualmente en edición (todoEditing).
   const [todos, setTodos] = useState([]); // useState inicializa el estado de "todos" como un array vacío.
   const [todoEditing, setTodoEditing] = useState(null); // Inicializa el estado de "todoEditing" como nulo.
-
+  const [theme, setTheme] = useState('light'); // Estado para controlar el tema, inicializado en 'light'.
   // useEffect para cargar las tareas almacenadas en el localStorage al cargar la aplicación.
   useEffect(() => {
     const json = localStorage.getItem("todos"); // Obtiene los datos de "todos" almacenados en el localStorage.
@@ -68,18 +68,26 @@ const App = () => { // Define un componente funcional llamado App.
     });
     setTodos(updatedTodos); // Establece la lista de tareas actualizada con el texto de la tarea cambiado.
     setTodoEditing(null); // Sale del modo de edición estableciendo "todoEditing" como nulo.
-  }
+    
+    // Función para alternar entre temas claro y oscuro.
   
+  }
+  function toggleTheme() {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+    console.log("Theme:", theme);
+
+  }
   // Renderiza la interfaz de usuario con el formulario de agregar tareas y la lista de tareas existentes.
   return (
-    <div id="todo-list">
-      <h1>Lista de Tareas</h1>
+  <div id="app-container" className={theme === 'dark' ? 'dark-theme' : ''}>
+    <div id="todo-list">      
+    <h1>Lista de Tareas</h1>
       <form onSubmit={handleSubmit}> {/* Formulario para agregar nuevas tareas */}
         <input
           type="text"
           id="todoAdd"
         />
-        <button type="submit">Agregar Tarea</button>
+        <button id="add-button" type="submit">Agregar Tarea</button>
       </form>
       {todos.map((todo) => ( // Itera sobre la lista de tareas y renderiza cada tarea junto con sus acciones (editar, eliminar).
         <div key={todo.id} className="todo">
@@ -115,6 +123,9 @@ const App = () => { // Define un componente funcional llamado App.
           </div>
         </div>
       ))}
+       {/* Agregar botón para alternar entre temas */}
+       <button onClick={toggleTheme} id="theme-button">{theme === 'light' ? 'Tema Oscuro' : 'Tema Claro'}</button>
+    </div>
     </div>
   );
 };
